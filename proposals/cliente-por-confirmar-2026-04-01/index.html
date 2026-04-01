@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Propuesta de servicios MetodologIA | Cliente por confirmar | MetodologIA</title>
+    <meta name="description" content="**ETAPA 1 | REPASO DE LO ENTENDIDO** - Necesitas una propuesta comercial del Programa de Empoderamiento para **Mansuera (Ecuador)**. - Debe usar la plantilla mejorada (Resumen, Problema, Solución Propuesta, Cronograma, Inversión) y expresarse en **USD** (incluido IVA). - Mantener cada bloque conciso y sin relleno...." />
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg-primary: #0b2545;
+        --bg-secondary: #071a33;
+        --bg-card: rgba(11, 37, 69, 0.62);
+        --text-primary: #f0f4f8;
+        --text-secondary: #a0b4cc;
+        --text-muted: #6b8ab0;
+        --border-color: rgba(255, 215, 0, 0.14);
+        --glass-bg: rgba(11, 37, 69, 0.58);
+        --glass-border: rgba(255, 215, 0, 0.12);
+        --gold: #ffd700;
+        --gold-dark: #ffa000;
+        --shadow-glow: 0 16px 48px rgba(0, 0, 0, 0.24);
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        font-family: Poppins, Montserrat, 'Segoe UI', sans-serif;
+        background:
+          radial-gradient(circle at top left, rgba(255, 215, 0, 0.14), transparent 24%),
+          radial-gradient(circle at bottom right, rgba(255, 215, 0, 0.1), transparent 28%),
+          linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+        color: var(--text-primary);
+      }
+      a { color: inherit; text-decoration: none; }
+      .shell { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
+      .glass-nav {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        backdrop-filter: blur(18px);
+        background: rgba(7, 26, 51, 0.72);
+        border-bottom: 1px solid var(--glass-border);
+      }
+      .nav-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        padding: 16px 0;
+      }
+      .brand { display: flex; align-items: center; gap: 12px; }
+      .brand-mark {
+        width: 42px;
+        height: 42px;
+        border-radius: 14px;
+        background: linear-gradient(135deg, #0a122a, #1e293b);
+        display: grid;
+        place-items: center;
+        border: 1px solid rgba(255,255,255,0.08);
+      }
+      .brand-copy strong { display: block; font-size: 0.98rem; }
+      .brand-copy span { color: var(--text-muted); font-size: 0.78rem; }
+      .gold-text {
+        background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .nav-links { display: flex; gap: 18px; color: var(--text-secondary); font-size: 0.92rem; }
+      .hero {
+        padding: 72px 0 32px;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.9fr);
+        gap: 22px;
+        align-items: stretch;
+      }
+      .glass-card {
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        border-radius: 24px;
+        box-shadow: var(--shadow-glow);
+      }
+      .hero-copy { padding: 40px; position: relative; overflow: hidden; }
+      .hero-copy::after {
+        content: '';
+        position: absolute;
+        inset: auto -60px -60px auto;
+        width: 240px;
+        height: 240px;
+        border-radius: 999px;
+        background: radial-gradient(circle, rgba(255, 215, 0, 0.2), transparent 72%);
+      }
+      .eyebrow, .section-kicker {
+        margin: 0 0 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: var(--gold);
+        font-size: 0.76rem;
+        font-weight: 700;
+      }
+      h1 { margin: 0 0 12px; font-size: clamp(2.5rem, 6vw, 4.8rem); line-height: 0.96; }
+      .hero-subtitle { margin: 0 0 18px; font-size: 1.15rem; color: var(--text-secondary); }
+      .hero-summary { margin: 0; max-width: 720px; line-height: 1.75; color: var(--text-secondary); }
+      .hero-aside { padding: 30px; display: flex; flex-direction: column; gap: 18px; }
+      .meta-grid, .metrics-grid, .two-col, .reference-grid, .stage-grid, .step-grid, .chips-grid {
+        display: grid;
+        gap: 16px;
+      }
+      .meta-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .metrics-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 24px; }
+      .metric-card, .meta-card { padding: 18px; border-radius: 18px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); }
+      .meta-card span { display: block; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px; }
+      .meta-card strong { font-size: 1rem; line-height: 1.45; }
+      .metric-value { margin: 0 0 6px; font-size: 1.8rem; font-weight: 800; color: var(--gold); }
+      .metric-label { margin: 0; color: var(--text-secondary); font-size: 0.85rem; }
+      section.block { padding: 18px 0 12px; }
+      .section-header { margin-bottom: 18px; max-width: 820px; }
+      .section-header h2 { margin: 0 0 10px; font-size: clamp(1.9rem, 4vw, 3.2rem); line-height: 1.02; }
+      .section-header p { margin: 0; color: var(--text-secondary); line-height: 1.72; }
+      .two-col { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .content-card { padding: 28px; }
+      .content-card h3, .reference-card h3, .stage-card h3 { margin: 0 0 14px; font-size: 1.2rem; }
+      .content-card p, .reference-card p, .stage-card p { margin: 0; color: var(--text-secondary); line-height: 1.7; }
+      .step-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .step-card { padding: 22px; min-height: 148px; }
+      .step-index { display: inline-flex; width: 40px; height: 40px; border-radius: 999px; align-items: center; justify-content: center; background: rgba(255, 215, 0, 0.1); color: var(--gold); font-weight: 800; margin-bottom: 16px; }
+      .step-card p { margin: 0; color: var(--text-primary); line-height: 1.6; }
+      .chips-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .chip-panel { padding: 24px; }
+      .chip-panel h3 { margin: 0 0 14px; font-size: 1rem; }
+      .chip-list { display: flex; flex-wrap: wrap; gap: 10px; }
+      .chip { display: inline-flex; padding: 8px 12px; border-radius: 999px; border: 1px solid var(--border-color); color: var(--text-secondary); font-size: 0.82rem; }
+      .bullet-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+      .bullet-panel { padding: 24px; }
+      .bullet-panel h3 { margin: 0 0 14px; font-size: 1rem; }
+      .bullet-panel ul { margin: 0; padding-left: 20px; color: var(--text-secondary); }
+      .bullet-panel li { margin-bottom: 10px; line-height: 1.6; }
+      .reference-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .reference-card, .stage-card { padding: 24px; }
+      .stage-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .cta-band { padding: 34px; display: flex; justify-content: space-between; gap: 18px; align-items: center; margin-top: 12px; }
+      .cta-band p { margin: 0; color: var(--text-secondary); line-height: 1.7; max-width: 720px; }
+      .cta-chip { padding: 14px 18px; border-radius: 999px; background: linear-gradient(135deg, var(--gold), var(--gold-dark)); color: #0b2545; font-weight: 800; white-space: nowrap; }
+      footer { padding: 36px 0 48px; color: var(--text-muted); font-size: 0.88rem; }
+      @media (max-width: 980px) {
+        .hero-grid, .two-col, .reference-grid, .stage-grid, .chips-grid, .bullet-grid { grid-template-columns: 1fr; }
+        .metrics-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .step-grid { grid-template-columns: 1fr; }
+        .meta-grid { grid-template-columns: 1fr; }
+        .cta-band { flex-direction: column; align-items: flex-start; }
+      }
+      @media (max-width: 720px) {
+        .shell { width: min(100%, calc(100% - 20px)); }
+        .nav-links { display: none; }
+        .hero { padding-top: 28px; }
+        .hero-copy, .hero-aside, .content-card, .chip-panel, .bullet-panel, .reference-card, .stage-card, .cta-band { padding: 22px; }
+        h1 { font-size: 2.3rem; }
+        .metrics-grid { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="glass-nav">
+      <div class="shell nav-inner">
+        <div class="brand">
+          <div class="brand-mark">
+            <svg width="22" height="22" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M10 12h3v12h-3V12zm6 0h3v8h-3v-8zm0 10h3v2h-3v-2zm6-10h3v6h-3v-6zm0 8h3v4h-3v-4z" fill="white"/>
+              <circle cx="18" cy="8" r="2" fill="#FFD700"/>
+            </svg>
+          </div>
+          <div class="brand-copy">
+            <strong>Metodolog<span class="gold-text">IA</span></strong>
+            <span>Plantilla comercial basada en conocimiento operativo</span>
+          </div>
+        </div>
+        <div class="nav-links">
+          <a href="#enfoque">Enfoque</a>
+          <a href="#proceso">Proceso</a>
+          <a href="#soporte">Soporte documental</a>
+          <a href="#cierre">Cierre</a>
+        </div>
+      </div>
+    </nav>
+    <main class="shell">
+      <section class="hero">
+        <div class="hero-grid">
+          <article class="glass-card hero-copy">
+            <p class="eyebrow">Propuesta comercial MetodologIA</p>
+            <h1>Propuesta de servicios MetodologIA</h1>
+            <p class="hero-subtitle">Cliente: Cliente por confirmar · Proceso base: Proceso por precisar</p>
+            <p class="hero-summary">**ETAPA 1 | REPASO DE LO ENTENDIDO** - Necesitas una propuesta comercial del Programa de Empoderamiento para **Mansuera (Ecuador)**. - Debe usar la plantilla mejorada (Resumen, Problema, Solución Propuesta, Cronograma, Inversión) y expresarse en **USD** (incluido IVA). - Mantener cada bloque conciso y sin relleno....</p>
+            <div class="metrics-grid">
+              <article class="metric-card">
+      <p class="metric-value">6</p>
+      <p class="metric-label">Fases base</p>
+    </article>
+<article class="metric-card">
+      <p class="metric-value">8</p>
+      <p class="metric-label">Entregables</p>
+    </article>
+<article class="metric-card">
+      <p class="metric-value">1</p>
+      <p class="metric-label">SOPs soporte</p>
+    </article>
+<article class="metric-card">
+      <p class="metric-value">4</p>
+      <p class="metric-label">Referencias KB</p>
+    </article>
+            </div>
+          </article>
+          <aside class="glass-card hero-aside">
+            <div class="meta-grid">
+              <article class="meta-card">
+                <span>Cliente</span>
+                <strong>Cliente por confirmar</strong>
+              </article>
+              <article class="meta-card">
+                <span>Fecha</span>
+                <strong>2026-04-01</strong>
+              </article>
+              <article class="meta-card">
+                <span>Servicio</span>
+                <strong>Propuesta de servicios MetodologIA</strong>
+              </article>
+              <article class="meta-card">
+                <span>Proceso rector</span>
+                <strong>Proceso por precisar</strong>
+              </article>
+            </div>
+            <div class="glass-card content-card">
+              <p class="section-kicker">Siguiente paso recomendado</p>
+              <h3>Activación comercial</h3>
+              <p>**ETAPA 1 | REPASO DE LO ENTENDIDO** - Necesitas una propuesta comercial del Programa de Empoderamiento para **Mansuera (Ecuador)**. - Debe usar la plantilla mejorada (Resumen, Problema, Solución Propuesta, Cronograma, Inversión) y...</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+      <section class="block" id="enfoque">
+        <div class="section-header">
+          <p class="section-kicker">Lectura ejecutiva</p>
+          <h2>La propuesta ya no nace desde cero: se arma sobre plantilla, proceso y documentación viva.</h2>
+          <p>Este HTML usa una base visual estable y combina el pedido del cliente con activos operativos, evidencia del knowledge base y la estructura etapificada que devuelve el bot.</p>
+        </div>
+        <div class="two-col">
+          <article class="glass-card content-card">
+            <p class="section-kicker">Qué entendimos</p>
+            <h3>Contexto del cliente y oportunidad</h3>
+            <p>**ETAPA 1 | REPASO DE LO ENTENDIDO** - Necesitas una propuesta comercial del Programa de Empoderamiento para **Mansuera (Ecuador)**. - Debe usar la plantilla mejorada (Resumen, Problema, Solución Propuesta, Cronograma, Inversión) y expresarse en **USD** (incluido IVA). - Mantener cada bloque conciso y sin relleno. **ETAPA 2 | PLAN DE ACCIÓN** 1. Adaptar contenidos al contexto ecuatoriano. 2. Definir entregables y...</p>
+          </article>
+          <article class="glass-card content-card">
+            <p class="section-kicker">Cómo respondemos</p>
+            <h3>Enfoque metodológico propuesto</h3>
+            <p>**ETAPA 1 | REPASO DE LO ENTENDIDO** - Necesitas una propuesta comercial del Programa de Empoderamiento para **Mansuera (Ecuador)**. - Debe usar la plantilla mejorada (Resumen, Problema, Solución Propuesta, Cronograma, Inversión) y expresarse en **USD** (incluido IVA). - Mantener cada bloque conciso y sin relleno. **ETAPA 2 | PLAN DE ACCIÓN** 1. Adaptar contenidos al contexto ecuatoriano. 2. Definir entregables y...</p>
+          </article>
+        </div>
+      </section>
+      <section class="block" id="proceso">
+        <div class="section-header">
+          <p class="section-kicker">Ruta operativa</p>
+          <h2>Fases sugeridas para ejecutar la propuesta</h2>
+          <p>Cuando el knowledge base identifica un proceso rector, estas fases salen directamente de su módulo operativo. Si no, la plantilla conserva una estructura mínima de propuesta con foco comercial.</p>
+        </div>
+        <div class="step-grid"><article class="glass-card step-card">
+        <span class="step-index">01</span>
+        <p>Necesitas una propuesta comercial del Programa de Empoderamiento para **Mansuera (Ecuador)**.</p>
+      </article>
+<article class="glass-card step-card">
+        <span class="step-index">02</span>
+        <p>Debe usar la plantilla mejorada (Resumen, Problema, Solución Propuesta, Cronograma, Inversión) y expresarse en **USD** (incluido IVA).</p>
+      </article>
+<article class="glass-card step-card">
+        <span class="step-index">03</span>
+        <p>Mantener cada bloque conciso y sin relleno.</p>
+      </article>
+<article class="glass-card step-card">
+        <span class="step-index">04</span>
+        <p>Adaptar contenidos al contexto ecuatoriano.</p>
+      </article>
+<article class="glass-card step-card">
+        <span class="step-index">05</span>
+        <p>Definir entregables y tiempos (9 semanas).</p>
+      </article>
+<article class="glass-card step-card">
+        <span class="step-index">06</span>
+        <p>Calcular inversión en USD con desglose y 12 % IVA.</p>
+      </article></div>
+      </section>
+      <section class="block">
+        <div class="section-header">
+          <p class="section-kicker">Alcance base</p>
+          <h2>Entregables, assets y gobierno operativo</h2>
+          <p>Estos bloques convierten el conocimiento interno de MetodologIA en una propuesta reusable, trazable y más rápida de adaptar para cada cliente.</p>
+        </div>
+        <div class="bullet-grid">
+          <article class="glass-card bullet-panel">
+            <p class="section-kicker">Entregables</p>
+            <h3>Lo que recibe el cliente</h3>
+            <ul><li>Necesitas una propuesta comercial del Programa de Empoderamiento para **Mansuera (Ecuador)**.</li><li>Debe usar la plantilla mejorada (Resumen, Problema, Solución Propuesta, Cronograma, Inversión) y expresarse en **USD** (incluido IVA).</li><li>Mantener cada bloque conciso y sin relleno.</li><li>Adaptar contenidos al contexto ecuatoriano.</li><li>Definir entregables y tiempos (9 semanas).</li><li>Calcular inversión en USD con desglose y 12 % IVA.</li><li>Redactar la propuesta siguiendo la plantilla solicitada.</li><li>Decisiones centralizadas y baja autonomía generan demoras operativas.</li></ul>
+          </article>
+          <article class="glass-card bullet-panel">
+            <p class="section-kicker">Riesgos</p>
+            <h3>Puntos que conviene gestionar desde el inicio</h3>
+            <ul><li>Alinear alcance, responsables y fecha de arranque.</li></ul>
+          </article>
+        </div>
+        <div class="chips-grid">
+          <article class="glass-card chip-panel">
+            <p class="section-kicker">Assets base</p>
+            <h3>Activos reutilizables</h3>
+            <div class="chip-list"><span class="chip">Assets por definir</span></div>
+          </article>
+          <article class="glass-card chip-panel">
+            <p class="section-kicker">SOPs y gates</p>
+            <h3>Controles de ejecución</h3>
+            <div class="chip-list"><span class="chip">Controles por precisar</span></div>
+          </article>
+        </div>
+      </section>
+      <section class="block" id="soporte">
+        <div class="section-header">
+          <p class="section-kicker">Soporte documental</p>
+          <h2>Referencias del knowledge base utilizadas para orientar la propuesta</h2>
+          <p>Este bloque está pensado para que cada propuesta tome contexto real de procesos, plantillas, assets, sitio y consolidaciones internas, no solo del prompt del usuario.</p>
+        </div>
+        <div class="reference-grid"><article class="glass-card reference-card">
+        <p class="section-kicker">ritual · rituales/empresas/smallbusiness/discovery/descubrir-necesidad/sop-03-discovery/04-ejecutar-discovery-con-ceo-ritual.md</p>
+        <h3>Ritual: Ejecutar Discovery con CEO/DirRH — Empresas/SmallBusiness (Sovereign v4.1)</h3>
+        <p>--- id: &quot;04&quot; segmento: &quot;empresas-smallbusiness&quot; journey: &quot;discovery&quot; proceso: &quot;descubrir-necesidad&quot; sop: &quot;sop-03-discovery&quot; ritual-slug: &quot;04-ejecutar-discovery-con-ceo&quot; version:...</p>
+      </article>
+<article class="glass-card reference-card">
+        <p class="section-kicker">site · site-metodologia/recursos/biblioteca-prompts/prompts_universales.json</p>
+        <h3>Objetivo</h3>
+        <p>a: ¡Aprobado! Por favor, proceder. Repasa el plan y aprovecha insights antes de avanzar con lo operativo. analisis_comparar_opciones_decision: ===parametros - elementos:...</p>
+      </article>
+<article class="glass-card reference-card">
+        <p class="section-kicker">ritual · rituales/empresas/smallbusiness/growth/expandir-valor/sop-12-expansion/14-proponer-siguiente-programa-ritual-human.md</p>
+        <h3>Guía Práctica: Venderle de Nuevo al Cliente Feliz (Upsell)</h3>
+        <p>--- id: &quot;14-human&quot;</p>
+      </article>
+<article class="glass-card reference-card">
+        <p class="section-kicker">ritual · rituales/empresas/smallbusiness/discovery/descubrir-necesidad/sop-03-discovery/04-ejecutar-discovery-con-ceo-ritual.md</p>
+        <h3>Ritual: Ejecutar Discovery con CEO/DirRH — Empresas/SmallBusiness (Sovereign v4.1)</h3>
+        <p>--- id: &quot;04&quot; segmento: &quot;empresas-smallbusiness&quot; journey: &quot;discovery&quot; proceso: &quot;descubrir-necesidad&quot; sop: &quot;sop-03-discovery&quot; ritual-slug: &quot;04-ejecutar-discovery-con-ceo&quot; version:...</p>
+      </article></div>
+      </section>
+      <section class="block">
+        <div class="section-header">
+          <p class="section-kicker">Trazabilidad</p>
+          <h2>Estructura etapificada devuelta por el bot</h2>
+          <p>Se conserva la salida por etapas para que la propuesta siga siendo auditable y editable por secciones.</p>
+        </div>
+        <div class="stage-grid"><article class="glass-card stage-card">
+        <p class="section-kicker">Etapa</p>
+        <h3>Contenido de la propuesta</h3>
+        <p>**ETAPA 1 | REPASO DE LO ENTENDIDO**  <br />- Necesitas una propuesta comercial del Programa de Empoderamiento para **Mansuera (Ecuador)**.  <br />- Debe usar la plantilla mejorada (Resumen, Problema, Solución Propuesta, Cronograma, Inversión) y expresarse en **USD** (incluido IVA).  <br />- Mantener cada bloque conciso y sin relleno.  <br /><br />**ETAPA 2 | PLAN DE ACCIÓN**  <br />1. Adaptar contenidos al contexto ecuatoriano.  <br />2. Definir entregables y tiempos (9 semanas).  <br />3. Calcular inversión en USD con desglose y 12 % IVA.  <br />4. Redactar la propuesta siguiendo la plantilla solicitada.  <br /><br />**ETAPA 3 | SCAFFOLD INICIAL**  <br /><br />**Resumen (≤600c)**  <br />Programa de 9 semanas (≈ 60 h) que desarrolla liderazgo, toma de decisiones y autonomía en los equipos de Mansuera. Incluye diagnóstico, talleres presenciales en Quito, simulaciones con casos locales, proyecto aplicado y certificación MetodologIA, con soporte LMS y mentores bilingües.  <br /><br />**Problema (≤900c)**  <br />- Decisiones centralizadas y baja autonomía generan demoras operativas.  <br />- Falta de habilidades de liderazgo y gestión de proyectos reduce la innovación.  <br />- Alta rotación y bajo clima organizacional impactan la productividad.  <br /><br />**Solución Propuesta (≤1400c)**  <br />1. **Diagnóstico &amp; Goal‑Setting** – encuesta de clima + entrevistas con líderes; entrega de informe de brechas.  <br />2. **Liderazgo &amp; Autonomía** – dos talleres presenciales (4 h c/u) con metodologías Minto; material digital.  <br />3. **Toma de decisiones** – simulaciones basadas en la cadena agroexportadora ecuatoriana; guía DACI y checklist.  <br />4. **Comunicación &amp; Influencia** – role‑play y coaching grupal; grabaciones y feedback individual.  <br />5. **Proyecto Aplicado** – cada participante diseña un plan de mejora en su área, con mentoría semanal (10 h total).  <br />6. **Cierre &amp; Certificación** – evaluación final, retroalimentación y certificado internacional MetodologIA.  <br />**Soporte continuo**: acceso a plataforma LMS, comunidad de práctica y recursos Minto durante 3 meses posteriores.  <br /><br />**Cronograma (≤700c)**  <br /><br />| Semana | Actividad | Entregable |<br />|--------|-----------|------------|<br />| 1 | Diagnóstico &amp; Goal‑Setting | Informe de brechas |<br />| 2‑3 | Liderazgo &amp; Autonomía | Slides + ejercicios |<br />| 4‑5 | Toma de decisiones | Guía + checklist |<br />| 6 | Comunicación &amp; Influencia | Grabaciones + feedback |<br />| 7‑9 | Proyecto aplicado + mentoría | Proyecto entregable + presentación |<br />| 9 (día X) | Cierre &amp; Certificación | Certificado MetodologIA |<br /><br />**Inversión (≤500c)**  <br /><br />| Concepto | USD |<br />|----------|-----|<br />| Programa completo (9 semanas) | 4,800 |<br />| Materiales digitales &amp; acceso LMS | 300 |<br />| Mentoría personalizada (10 h) | 400 |<br />| **Subtotal** | 5,500 |<br />| IVA 12 % (Ecuador) | 660 |<br />| **Total a pagar** | **6,160 USD** |<br /><br />*Incluye todos los materiales, desplazamiento del equipo a Quito y certificación.*  <br /><br />**ETAPA 4 | SIGUIENTE PASO**  <br />Confirma si la propuesta (USD 6,160) y el cronograma son aceptables para Mansuera o indica los ajustes (alcance, plazos, presupuesto) que deseas, para generar la versión final con contrato.</p>
+      </article></div>
+      </section>
+      <section class="block" id="cierre">
+        <article class="glass-card cta-band">
+          <div>
+            <p class="section-kicker">Cierre comercial</p>
+            <h2 style="margin:0 0 12px;">La plantilla queda lista para rellenarse automáticamente en cada nueva propuesta.</h2>
+            <p>**ETAPA 1 | REPASO DE LO ENTENDIDO** - Necesitas una propuesta comercial del Programa de Empoderamiento para **Mansuera (Ecuador)**. - Debe usar la plantilla mejorada (Resumen, Problema, Solución Propuesta, Cronograma, Inversión) y...</p>
+          </div>
+          <div class="cta-chip">Documento listo para compartir</div>
+        </article>
+      </section>
+      <footer>
+        Generado por Nexus para MetodologIA. HTML autocontenido, portable y basado en una plantilla reusable inspirada en el dossier comercial de referencia.
+      </footer>
+    </main>
+  </body>
+</html>
