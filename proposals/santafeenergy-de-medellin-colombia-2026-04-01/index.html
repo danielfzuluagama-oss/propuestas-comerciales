@@ -1,0 +1,707 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ofimática con IA en Google Workspace | santafeenergy de medellin colombia | MetodologIA</title>
+    <meta name="description" content="Propuesta para santafeenergy de medellin colombia · Ofimática con IA en Google Workspace · Objetivo: para el cliente santafeenergy de medellin colombia: en el cual se ejecutará ofimática con IA enfocado en la plataforma de workspace de google donde se enseña... · Alcance: workshop · Cronograma: 20 horas" />
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg-primary: #0b2545;
+        --bg-secondary: #071a33;
+        --bg-card: rgba(11, 37, 69, 0.62);
+        --text-primary: #f0f4f8;
+        --text-secondary: #a0b4cc;
+        --text-muted: #6b8ab0;
+        --border-color: rgba(255, 215, 0, 0.14);
+        --glass-bg: rgba(11, 37, 69, 0.58);
+        --glass-border: rgba(255, 215, 0, 0.12);
+        --gold: #ffd700;
+        --gold-dark: #ffa000;
+        --shadow-glow: 0 16px 48px rgba(0, 0, 0, 0.24);
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        font-family: Poppins, Montserrat, 'Segoe UI', sans-serif;
+        background:
+          radial-gradient(circle at top left, rgba(255, 215, 0, 0.14), transparent 24%),
+          radial-gradient(circle at bottom right, rgba(255, 215, 0, 0.1), transparent 28%),
+          linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+        color: var(--text-primary);
+      }
+      a { color: inherit; text-decoration: none; }
+      .shell { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
+      .glass-nav {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        backdrop-filter: blur(18px);
+        background: rgba(7, 26, 51, 0.72);
+        border-bottom: 1px solid var(--glass-border);
+      }
+      .nav-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        padding: 16px 0;
+      }
+      .brand { display: flex; align-items: center; gap: 12px; }
+      .brand-mark {
+        width: 42px;
+        height: 42px;
+        border-radius: 14px;
+        background: linear-gradient(135deg, #0a122a, #1e293b);
+        display: grid;
+        place-items: center;
+        border: 1px solid rgba(255,255,255,0.08);
+      }
+      .brand-copy strong { display: block; font-size: 0.98rem; }
+      .brand-copy span { color: var(--text-muted); font-size: 0.78rem; }
+      .gold-text {
+        background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .nav-links { display: flex; gap: 18px; color: var(--text-secondary); font-size: 0.92rem; }
+      .hero {
+        padding: 72px 0 32px;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.9fr);
+        gap: 22px;
+        align-items: stretch;
+      }
+      .glass-card {
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        border-radius: 24px;
+        box-shadow: var(--shadow-glow);
+      }
+      .hero-copy { padding: 40px; position: relative; overflow: hidden; }
+      .hero-copy::after {
+        content: '';
+        position: absolute;
+        inset: auto -60px -60px auto;
+        width: 240px;
+        height: 240px;
+        border-radius: 999px;
+        background: radial-gradient(circle, rgba(255, 215, 0, 0.2), transparent 72%);
+      }
+      .eyebrow, .section-kicker {
+        margin: 0 0 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: var(--gold);
+        font-size: 0.76rem;
+        font-weight: 700;
+      }
+      h1 { margin: 0 0 12px; font-size: clamp(2.5rem, 6vw, 4.8rem); line-height: 0.96; }
+      .hero-subtitle { margin: 0 0 18px; font-size: 1.15rem; color: var(--text-secondary); }
+      .hero-summary { margin: 0; max-width: 720px; line-height: 1.75; color: var(--text-secondary); }
+      .hero-aside { padding: 30px; display: flex; flex-direction: column; gap: 18px; }
+      .meta-grid, .metrics-grid, .two-col, .reference-grid, .stage-grid, .step-grid, .chips-grid {
+        display: grid;
+        gap: 16px;
+      }
+      .meta-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .metrics-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 24px; }
+      .metric-card, .meta-card { padding: 18px; border-radius: 18px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); }
+      .meta-card span { display: block; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px; }
+      .meta-card strong { font-size: 1rem; line-height: 1.45; }
+      .metric-value { margin: 0 0 6px; font-size: 1.8rem; font-weight: 800; color: var(--gold); }
+      .metric-label { margin: 0; color: var(--text-secondary); font-size: 0.85rem; }
+      section.block { padding: 18px 0 12px; }
+      .section-header { margin-bottom: 18px; max-width: 820px; }
+      .section-header h2 { margin: 0 0 10px; font-size: clamp(1.9rem, 4vw, 3.2rem); line-height: 1.02; }
+      .section-header p { margin: 0; color: var(--text-secondary); line-height: 1.72; }
+      .two-col { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .content-card { padding: 28px; }
+      .content-card h3, .reference-card h3, .stage-card h3 { margin: 0 0 14px; font-size: 1.2rem; }
+      .content-card p, .reference-card p, .stage-card p { margin: 0; color: var(--text-secondary); line-height: 1.7; }
+      .step-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .step-card { padding: 22px; min-height: 148px; }
+      .step-index { display: inline-flex; width: 40px; height: 40px; border-radius: 999px; align-items: center; justify-content: center; background: rgba(255, 215, 0, 0.1); color: var(--gold); font-weight: 800; margin-bottom: 16px; }
+      .step-card p { margin: 0; color: var(--text-primary); line-height: 1.6; }
+      .chips-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .chip-panel { padding: 24px; }
+      .chip-panel h3 { margin: 0 0 14px; font-size: 1rem; }
+      .chip-list { display: flex; flex-wrap: wrap; gap: 10px; }
+      .chip { display: inline-flex; padding: 8px 12px; border-radius: 999px; border: 1px solid var(--border-color); color: var(--text-secondary); font-size: 0.82rem; }
+      .process-card { display: flex; flex-direction: column; gap: 14px; }
+      .process-stack { display: grid; gap: 14px; }
+      .mini-label { margin: 0 0 8px; color: var(--text-muted); font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; }
+      .bullet-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+      .bullet-panel { padding: 24px; }
+      .bullet-panel h3 { margin: 0 0 14px; font-size: 1rem; }
+      .bullet-panel ul { margin: 0; padding-left: 20px; color: var(--text-secondary); }
+      .bullet-panel li { margin-bottom: 10px; line-height: 1.6; }
+      .reference-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .reference-card, .stage-card { padding: 24px; }
+      .stage-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .cta-band { padding: 34px; display: flex; justify-content: space-between; gap: 18px; align-items: center; margin-top: 12px; }
+      .cta-band p { margin: 0; color: var(--text-secondary); line-height: 1.7; max-width: 720px; }
+      .cta-chip { padding: 14px 18px; border-radius: 999px; background: linear-gradient(135deg, var(--gold), var(--gold-dark)); color: #0b2545; font-weight: 800; white-space: nowrap; }
+      footer { padding: 36px 0 48px; color: var(--text-muted); font-size: 0.88rem; }
+      @media (max-width: 980px) {
+        .hero-grid, .two-col, .reference-grid, .stage-grid, .chips-grid, .bullet-grid { grid-template-columns: 1fr; }
+        .metrics-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .step-grid { grid-template-columns: 1fr; }
+        .meta-grid { grid-template-columns: 1fr; }
+        .cta-band { flex-direction: column; align-items: flex-start; }
+      }
+      @media (max-width: 720px) {
+        .shell { width: min(100%, calc(100% - 20px)); }
+        .nav-links { display: none; }
+        .hero { padding-top: 28px; }
+        .hero-copy, .hero-aside, .content-card, .chip-panel, .bullet-panel, .reference-card, .stage-card, .cta-band { padding: 22px; }
+        h1 { font-size: 2.3rem; }
+        .metrics-grid { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="glass-nav">
+      <div class="shell nav-inner">
+        <div class="brand">
+          <div class="brand-mark">
+            <svg width="22" height="22" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M10 12h3v12h-3V12zm6 0h3v8h-3v-8zm0 10h3v2h-3v-2zm6-10h3v6h-3v-6zm0 8h3v4h-3v-4z" fill="white"/>
+              <circle cx="18" cy="8" r="2" fill="#FFD700"/>
+            </svg>
+          </div>
+          <div class="brand-copy">
+            <strong>Metodolog<span class="gold-text">IA</span></strong>
+            <span>Plantilla comercial basada en conocimiento operativo</span>
+          </div>
+        </div>
+        <div class="nav-links">
+          <a href="#hook">Resumen</a>
+          <a href="#vision">Vision</a>
+          <a href="#journey">Ruta</a>
+          <a href="#programa">Programa</a>
+          <a href="#credenciales">Credenciales</a>
+          <a href="#roi">ROI</a>
+          <a href="#faq">FAQ</a>
+          <a href="#cierre">Cierre</a>
+        </div>
+      </div>
+    </nav>
+    <main class="shell">
+      <section class="hero">
+        <div class="hero-grid">
+          <article class="glass-card hero-copy">
+            <p class="eyebrow">Dossier ejecutivo MetodologIA</p>
+            <h1>Ofimática con IA en Google Workspace</h1>
+            <p class="hero-subtitle">Cliente: santafeenergy de medellin colombia · Servicio: Ofimática con IA en Google Workspace</p>
+            <p class="hero-summary">Propuesta para santafeenergy de medellin colombia · Ofimática con IA en Google Workspace · Objetivo: para el cliente santafeenergy de medellin colombia: en el cual se ejecutará ofimática con IA enfocado en la plataforma de workspace de google donde se enseña... · Alcance: workshop · Cronograma: 20 horas</p>
+            <div class="metrics-grid">
+              <article class="metric-card">
+      <p class="metric-value">4</p>
+      <p class="metric-label">Fases base</p>
+    </article>
+<article class="metric-card">
+      <p class="metric-value">8</p>
+      <p class="metric-label">Entregables</p>
+    </article>
+<article class="metric-card">
+      <p class="metric-value">8</p>
+      <p class="metric-label">SOPs soporte</p>
+    </article>
+<article class="metric-card">
+      <p class="metric-value">4</p>
+      <p class="metric-label">Referencias KB</p>
+    </article>
+            </div>
+          </article>
+          <aside class="glass-card hero-aside">
+            <div class="meta-grid">
+              <article class="meta-card">
+                <span>Cliente</span>
+                <strong>santafeenergy de medellin colombia</strong>
+              </article>
+              <article class="meta-card">
+                <span>Servicio</span>
+                <strong>Ofimática con IA en Google Workspace</strong>
+              </article>
+              <article class="meta-card">
+                <span>Alcance</span>
+                <strong>workshop</strong>
+              </article>
+              <article class="meta-card">
+                <span>Cronograma</span>
+                <strong>20 horas</strong>
+              </article>
+            </div>
+            <div class="glass-card content-card">
+              <p class="section-kicker">Inversión y cierre</p>
+              <h3>Inversión por confirmar</h3>
+              <p>Objetivo: para el cliente santafeenergy de medellin colombia:https://santafeenergy.com.co/ en el cual se ejecutará ofimática con IA enfocado en la plataforma de workspace de google donde se enseñará a gemini, se enseñará a hacer propuestas...</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+      <section class="block" id="hook">
+        <div class="section-header">
+          <p class="section-kicker">Resumen Ejecutivo</p>
+          <h2>La propuesta se arma sobre una lectura clara del problema y una respuesta accionable.</h2>
+          <p>El objetivo es que la persona decisora entienda qué se propone, por qué ahora y cómo se ejecuta sin tener que descifrar el prompt original.</p>
+        </div>
+        <div class="two-col">
+          <article class="glass-card content-card">
+            <p class="section-kicker">Qué entendimos</p>
+            <h3>Contexto del cliente y oportunidad</h3>
+            <p>para el cliente santafeenergy de medellin colombia: en el cual se ejecutará ofimática con IA enfocado en la plataforma de workspace de google donde se enseña...</p>
+          </article>
+          <article class="glass-card content-card">
+            <p class="section-kicker">Cómo respondemos</p>
+            <h3>Enfoque metodológico propuesto</h3>
+            <p>Alcance: workshop Cronograma: 20 horas Base interna: &gt; Versión: 0.1 (Scaffolding) &gt; Objetivo: Estandarizar la entrega del valor prometido en la venta. --- Nota de contexto: Bloque interno de plantilla resumido para mantener la trazabilidad.</p>
+          </article>
+        </div>
+      </section>
+      <section class="block" id="vision">
+        <div class="section-header">
+          <p class="section-kicker">Vision</p>
+          <h2>La imagen final de la propuesta: claridad, método y un cierre que sí se puede operar.</h2>
+          <p>Esta sección convierte el resumen en una expectativa concreta sobre lo que cambia al implementar el servicio.</p>
+        </div>
+        <div class="two-col">
+          <article class="glass-card content-card">
+            <p class="section-kicker">Resultado esperado</p>
+            <h3>El cliente entiende el valor y la ruta</h3>
+            <p>Propuesta para santafeenergy de medellin colombia · Ofimática con IA en Google Workspace · Objetivo: para el cliente santafeenergy de medellin colombia: en el cual se ejecutará ofimática con IA enfocado en la plataforma de workspace de google donde se enseña... · Alcance: workshop · Cronograma: 20 horas</p>
+          </article>
+          <article class="glass-card content-card">
+            <p class="section-kicker">Lo que queda instalado</p>
+            <h3>Entregables y activos reutilizables</h3>
+            <p>bootcamp/assets · consultoria/assets · programa-elite/assets · workshop/assets</p>
+          </article>
+        </div>
+      </section>
+      <section class="block" id="journey">
+        <div class="section-header">
+          <p class="section-kicker">Journey</p>
+          <h2>Fases de implementación sugeridas</h2>
+          <p>Cuando el conocimiento operativo identifica una ruta base, estas fases salen de su módulo operativo. Si no, la plantilla conserva una secuencia comercial mínima y clara para avanzar.</p>
+        </div>
+        <div class="step-grid"><article class="glass-card step-card">
+        <span class="step-index">01</span>
+        <p>Fase 1: Onboarding del Aliado (6-8 semanas)</p>
+      </article>
+<article class="glass-card step-card">
+        <span class="step-index">02</span>
+        <p>Fase 2: Piloto Cohort (Semana 0-8)</p>
+      </article>
+<article class="glass-card step-card">
+        <span class="step-index">03</span>
+        <p>Fase 3: Lanzamiento Público (Semana 9+)</p>
+      </article>
+<article class="glass-card step-card">
+        <span class="step-index">04</span>
+        <p>Fase 4: Escalabilidad (Trimestral)</p>
+      </article></div>
+      </section>
+      <section class="block" id="programa">
+        <div class="section-header">
+          <p class="section-kicker">Programa</p>
+          <h2>Entregables, assets y gobierno operativo</h2>
+          <p>Estos bloques convierten el conocimiento interno de MetodologIA en una propuesta reusable, trazable y más rápida de adaptar para cada cliente.</p>
+        </div>
+        <div class="bullet-grid">
+          <article class="glass-card bullet-panel">
+            <p class="section-kicker">Entregables</p>
+            <h3>Lo que recibe el cliente</h3>
+            <ul><li>bootcamp/assets</li><li>consultoria/assets</li><li>programa-elite/assets</li><li>workshop/assets</li><li>---</li><li>`formulario-f0-contacto-inicial.md`</li><li>`formulario-f1-diagnostico.md`</li><li>`formulario-f2-contratacion.md`</li></ul>
+          </article>
+          <article class="glass-card bullet-panel">
+            <p class="section-kicker">Riesgos</p>
+            <h3>Puntos que conviene gestionar desde el inicio</h3>
+            <ul><li>Alinear la propuesta con Delivery Servicios y su owner operativo antes de compartirla.</li><li>Verificar que el alcance de workshop quede cerrado antes de enviar la versión final.</li></ul>
+          </article>
+        </div>
+        <div class="chips-grid">
+          <article class="glass-card chip-panel">
+            <p class="section-kicker">Assets base</p>
+            <h3>Activos reutilizables</h3>
+            <div class="chip-list"><span class="chip">bootcamp/assets</span><span class="chip">consultoria/assets</span><span class="chip">programa-elite/assets</span><span class="chip">workshop/assets</span><span class="chip">---</span><span class="chip">`formulario-f0-contacto-inicial.md`</span><span class="chip">`formulario-f1-diagnostico.md`</span><span class="chip">`formulario-f2-contratacion.md`</span></div>
+          </article>
+          <article class="glass-card chip-panel">
+            <p class="section-kicker">SOPs y gates</p>
+            <h3>Controles de ejecución</h3>
+            <div class="chip-list"><span class="chip">--- ## FASE 1: DISEÑO CURRICULAR (T-21 a T-7) ### Objetivo Personalizar curriculum para contexto específico, definir proyecto capstone, entrenar facilitadores, setup technical infrastructure. ### Duración **14 días** | E</span><span class="chip">--- ## KPIs Globales de Bootcamp | KPI | Métrica | Target | Cadencia | Responsable | |-----|---------|--------|----------|------------| | **Cohort Completion** | # participants who complete 3 weeks | ≥ 95% | Post-bootcam</span><span class="chip">--- ## Quality Assurance **Pre-bootcamp curriculum review** (by Facilitador Lead): 1. [ ] Objectives are measurable + achievable in 3 weeks 2. [ ] Content scaffolds well (foundations → advanced → synthesis) 3. [ ] Projec</span><span class="chip">--- ## KPIs for Facilitation Phase | KPI | Target | Owner | |-----|--------|-------| | **Session attendance** | ≥ 90% Monday/Friday, ≥ 70% Tue-Thu | Ops | | **Engagement** | ≥ 70% participate actively | Facilitador | | *</span><span class="chip">definir-metricas-exito-sop.md</span><span class="chip">este al 100%. | | Enviar todos los formularios juntos | Mata la conversion. El prospecto ve 30 campos y se va. | Respetar la progresion. Cada formulario en su momento. | | Dejar que el cliente &quot;complete despues&quot; el F2 | </span><span class="chip">**Scoring:** Probabilidad (Alta=3, Media=2, Baja=1) × Impacto (Crítico=4, Alto=3, Medio=2, Bajo=1). Score &gt;6 = acción inmediata. Score 4-6 = monitoreo activo. Score &lt;4 = aceptar y monitorear. --- v1.0.0 — Registro de rie</span><span class="chip">completado y firmado por ambas partes - [ ] Copia enviada al cliente por email - [ ] SLA registrado en expediente CLM del contrato - [ ] Monitoreo configurado - [ ] Equipo de delivery informado de los SLA comprometidos -</span></div>
+          </article>
+        </div>
+      </section>
+      <section class="block" id="modalidades">
+        <div class="section-header">
+          <p class="section-kicker">Modalidades</p>
+          <h2>Cómo se participa, dónde aplica y qué ventana de trabajo se abre</h2>
+          <p>La propuesta deja explícito el formato comercial y operativo en vez de asumirlo en silencio.</p>
+        </div>
+        <div class="reference-grid"><article class="glass-card reference-card">
+        <p class="section-kicker">Modalidad</p>
+        <h3>Formato</h3>
+        <p>workshop</p>
+        <p class="section-kicker">Modalidad</p>
+      </article>
+<article class="glass-card reference-card">
+        <p class="section-kicker">Modalidad</p>
+        <h3>Cobertura</h3>
+        <p>colombia | medellin</p>
+        <p class="section-kicker">Mercado</p>
+      </article>
+<article class="glass-card reference-card">
+        <p class="section-kicker">Modalidad</p>
+        <h3>Cronograma</h3>
+        <p>20 horas</p>
+        <p class="section-kicker">Tiempo</p>
+      </article>
+<article class="glass-card reference-card">
+        <p class="section-kicker">Modalidad</p>
+        <h3>Inversión</h3>
+        <p>Inversión por confirmar</p>
+        <p class="section-kicker">Comercial</p>
+      </article></div>
+      </section>
+      <section class="block" id="objeciones">
+        <div class="section-header">
+          <p class="section-kicker">Objeciones</p>
+          <h2>Lo que probablemente está pensando la persona decisora</h2>
+          <p>Responder estas dudas por adelantado reduce fricción y acelera el cierre.</p>
+        </div>
+        <div class="reference-grid"><article class="glass-card reference-card">
+        <p class="section-kicker">Objeción</p>
+        <h3>No tengo tiempo para otro programa</h3>
+        <p>La ruta prioriza Fase 1: Onboarding del Aliado (6-8 semanas) para avanzar sin sobrecargar al equipo ni abrir el alcance de una sola vez.</p>
+        <p class="section-kicker">Objeción 01</p>
+      </article>
+<article class="glass-card reference-card">
+        <p class="section-kicker">Objeción</p>
+        <h3>Ya probé IA y no funcionó</h3>
+        <p>La propuesta se apoya en evidencia, entregables y gates, no en demos aisladas.</p>
+        <p class="section-kicker">Objeción 02</p>
+      </article>
+<article class="glass-card reference-card">
+        <p class="section-kicker">Objeción</p>
+        <h3>No soy técnico</h3>
+        <p>La lectura es ejecutiva: objetivo, alcance, ruta, ROI y cierre para Ofimática con IA en Google Workspace.</p>
+        <p class="section-kicker">Objeción 03</p>
+      </article>
+<article class="glass-card reference-card">
+        <p class="section-kicker">Objeción</p>
+        <h3>La inversión es alta</h3>
+        <p>Se deja explícito el criterio de cierre y el valor esperado antes de comprometer alcance adicional.</p>
+        <p class="section-kicker">Objeción 04</p>
+      </article></div>
+      </section>
+      <section class="block" id="credenciales">
+        <div class="section-header">
+          <p class="section-kicker">Credenciales</p>
+          <h2>Por qué confiar en este proceso</h2>
+          <p>La propuesta se sustenta en evidencia, gobierno operativo y una capa de ejecución trazable.</p>
+        </div>
+        <div class="two-col">
+          <article class="glass-card content-card">
+            <p class="section-kicker">Pristino</p>
+            <h3>La capa operativa detrás de la propuesta</h3>
+            <p>Pristino convierte el conocimiento operativo en una ruta trazable y ejecutable. Si falta una pieza, la propuesta lo deja explícito en vez de inventarlo.</p>
+          </article>
+          <article class="glass-card content-card">
+            <p class="section-kicker">Evidencia y control</p>
+            <h3>Referencias y gobierno detectados</h3>
+            <p>Se cruzaron 4 referencias internas y públicas para evitar inventar contexto.</p>
+          </article>
+        </div>
+        <div class="reference-grid"><article class="glass-card reference-card process-card">
+        <p class="section-kicker">Ruta relacionada · Listo</p>
+        <h3>Delivery Servicios</h3>
+        <p>&gt; Versión: 0.1 (Scaffolding) &gt; Objetivo: Estandarizar la entrega del valor prometido en la venta. ---</p>
+        <p class="section-kicker">proceso-delivery-servicios · 79 coincidencias léxicas · coincide con el resumen operativo · coincide con capacidades operativas</p>
+        <div class="process-stack">
+          <div>
+            <p class="mini-label">Fases</p>
+            <div class="chip-list"><span class="chip">Fase 1: Onboarding del Aliado (6-8 semanas)</span><span class="chip">Fase 2: Piloto Cohort (Semana 0-8)</span><span class="chip">Fase 3: Lanzamiento Público (Semana 9+)</span><span class="chip">Fase 4: Escalabilidad (Trimestral)</span></div>
+          </div>
+          <div>
+            <p class="mini-label">Gates</p>
+            <div class="chip-list"><span class="chip">Gates por definir</span></div>
+          </div>
+          <div>
+            <p class="mini-label">Assets</p>
+            <div class="chip-list"><span class="chip">bootcamp/assets</span><span class="chip">consultoria/assets</span><span class="chip">programa-elite/assets</span><span class="chip">workshop/assets</span></div>
+          </div>
+          <div>
+            <p class="mini-label">SOPs</p>
+            <div class="chip-list"><span class="chip">--- ## FASE 1: DISEÑO CURRICULAR (T-21 a T-7) ### Objetivo Personalizar curriculum para contexto específico, definir proyecto capstone, entrenar facilitadores, setup technical infrastructure. ### Duración **14 días** | E</span><span class="chip">--- ## KPIs Globales de Bootcamp | KPI | Métrica | Target | Cadencia | Responsable | |-----|---------|--------|----------|------------| | **Cohort Completion** | # participants who complete 3 weeks | ≥ 95% | Post-bootcam</span><span class="chip">--- ## Quality Assurance **Pre-bootcamp curriculum review** (by Facilitador Lead): 1. [ ] Objectives are measurable + achievable in 3 weeks 2. [ ] Content scaffolds well (foundations → advanced → synthesis) 3. [ ] Projec</span><span class="chip">--- ## KPIs for Facilitation Phase | KPI | Target | Owner | |-----|--------|-------| | **Session attendance** | ≥ 90% Monday/Friday, ≥ 70% Tue-Thu | Ops | | **Engagement** | ≥ 70% participate actively | Facilitador | | *</span></div>
+          </div>
+          
+          <div>
+            <p class="mini-label">Dependencias</p>
+            <div class="chip-list"><span class="chip">--- ## KPIs Globales de Bootcamp | KPI | Métrica | Target | Cadencia | Responsable | |-----|---------|--------|----------|------------| | **Cohort Completion** | # participants who complete 3 weeks | ≥ 95% | Post-bootcam</span><span class="chip">--- ## Quality Assurance **Pre-bootcamp curriculum review** (by Facilitador Lead): 1. [ ] Objectives are measurable + achievable in 3 weeks 2. [ ] Content scaffolds well (foundations → advanced → synthesis) 3. [ ] Projec</span><span class="chip">--- ## KPIs for Facilitation Phase | KPI | Target | Owner | |-----|--------|-------| | **Session attendance** | ≥ 90% Monday/Friday, ≥ 70% Tue-Thu | Ops | | **Engagement** | ≥ 70% participate actively | Facilitador | | *</span></div>
+          </div>
+          
+        </div>
+      </article>
+<article class="glass-card reference-card process-card">
+        <p class="section-kicker">Ruta relacionada · Listo</p>
+        <h3>Onboarding Cliente</h3>
+        <p>Version: 2.0.0 Fecha: 2026-03-25 Owner: COO / Director Comercial Cierra: FM-09, FM-14, FM-16 Innovacion clave: Recoleccion progresiva de datos — minima friccion al inicio, enriquecimiento por fases ---</p>
+        <p class="section-kicker">proceso-onboarding-cliente · 53 coincidencias léxicas · coincide con el resumen operativo · coincide con capacidades operativas</p>
+        <div class="process-stack">
+          <div>
+            <p class="mini-label">Fases</p>
+            <div class="chip-list"><span class="chip">F0 — Awareness (Contacto Inicial)</span><span class="chip">F1 — Diagnostico</span><span class="chip">F2 — Contratacion</span><span class="chip">F3 — Kickoff</span></div>
+          </div>
+          <div>
+            <p class="mini-label">Gates</p>
+            <div class="chip-list"><span class="chip">Gates por definir</span></div>
+          </div>
+          <div>
+            <p class="mini-label">Assets</p>
+            <div class="chip-list"><span class="chip">---</span><span class="chip">`formulario-f0-contacto-inicial.md`</span><span class="chip">`formulario-f1-diagnostico.md`</span><span class="chip">`formulario-f2-contratacion.md`</span></div>
+          </div>
+          <div>
+            <p class="mini-label">SOPs</p>
+            <div class="chip-list"><span class="chip">definir-metricas-exito-sop.md</span><span class="chip">este al 100%. | | Enviar todos los formularios juntos | Mata la conversion. El prospecto ve 30 campos y se va. | Respetar la progresion. Cada formulario en su momento. | | Dejar que el cliente &quot;complete despues&quot; el F2 | </span><span class="chip">**Scoring:** Probabilidad (Alta=3, Media=2, Baja=1) × Impacto (Crítico=4, Alto=3, Medio=2, Bajo=1). Score &gt;6 = acción inmediata. Score 4-6 = monitoreo activo. Score &lt;4 = aceptar y monitorear. --- v1.0.0 — Registro de rie</span><span class="chip">completado y firmado por ambas partes - [ ] Copia enviada al cliente por email - [ ] SLA registrado en expediente CLM del contrato - [ ] Monitoreo configurado - [ ] Equipo de delivery informado de los SLA comprometidos -</span></div>
+          </div>
+          
+        </div>
+      </article></div>
+      </section>
+      <section class="block" id="equipo">
+        <div class="section-header">
+          <p class="section-kicker">Equipo</p>
+          <h2>Quiénes lo acompañan</h2>
+          <p>La referencia humana sigue siendo parte de la credibilidad del dossier.</p>
+        </div>
+        <div class="reference-grid"><article class="glass-card reference-card">
+        <p class="section-kicker">Equipo fundador</p>
+        <h3>Daniel Zuluaga · Chief Efficiency Officer</h3>
+        <p>Optimización y Eficiencia Operativa</p>
+        <p class="section-kicker">Equipo fundador MetodologIA</p>
+      </article></div>
+      </section>
+      <section class="block" id="metodologias">
+        <div class="section-header">
+          <p class="section-kicker">Metodologias</p>
+          <h2>Servicios y recursos que respaldan la ejecución</h2>
+          <p>Esta capa muestra el catálogo de capacidades públicas que complementa el servicio contratado.</p>
+        </div>
+        <div class="reference-grid"><article class="glass-card reference-card">
+        <p class="section-kicker">Servicios</p>
+        <h3>Workshop Venta Amplificada</h3>
+        <p>Formación intensiva para equipos comerciales (B2B). · COP 3.000.000</p>
+        <p class="section-kicker">https://metodologia.info/servicios/index</p>
+      </article>
+<article class="glass-card reference-card">
+        <p class="section-kicker">Servicios</p>
+        <h3>Bootcamp Ventas IA</h3>
+        <p>Programa inmersivo de 3 semanas para dominar la Venta Amplificada. · COP 12.000.000</p>
+        <p class="section-kicker">https://metodologia.info/servicios/index</p>
+      </article></div>
+        <div class="reference-grid"><article class="glass-card reference-card">
+        <p class="section-kicker">Recursos</p>
+        <h3>Asistentes GPT/Gemini</h3>
+        <p>Agentes IA pre-configurados</p>
+        <p class="section-kicker">https://metodologia.info/recursos/index</p>
+      </article>
+<article class="glass-card reference-card">
+        <p class="section-kicker">Recursos</p>
+        <h3>Playbooks Estratégicos</h3>
+        <p>Guías paso a paso</p>
+        <p class="section-kicker">https://metodologia.info/recursos/index</p>
+      </article>
+<article class="glass-card reference-card">
+        <p class="section-kicker">Recursos</p>
+        <h3>Mini-Apps</h3>
+        <p>Herramientas tácticas de IA</p>
+        <p class="section-kicker">https://metodologia.info/recursos/index</p>
+      </article>
+<article class="glass-card reference-card">
+        <p class="section-kicker">Recursos</p>
+        <h3>Ebooks</h3>
+        <p>Literatura de profundidad</p>
+        <p class="section-kicker">https://metodologia.info/recursos/index</p>
+      </article></div>
+      </section>
+      <section class="block" id="roi">
+        <div class="section-header">
+          <p class="section-kicker">ROI</p>
+          <h2>Valor esperado y criterio de retorno</h2>
+          <p>La inversión se presenta con una lógica de retorno y no como un número aislado.</p>
+        </div>
+        <div class="reference-grid"><article class="glass-card reference-card">
+        <p class="section-kicker">ROI</p>
+        <h3>Impacto esperado</h3>
+        <p>Fases base: 4 · Entregables: 8 · SOPs: 8 · Referencias: 4.</p>
+        <p class="section-kicker">ROI</p>
+      </article>
+<article class="glass-card reference-card">
+        <p class="section-kicker">ROI</p>
+        <h3>Inversión</h3>
+        <p>Inversión por confirmar</p>
+        <p class="section-kicker">Comercial</p>
+      </article>
+<article class="glass-card reference-card">
+        <p class="section-kicker">ROI</p>
+        <h3>Retorno</h3>
+        <p>Se valida con los datos del cliente y el siguiente hito comercial antes de cerrar el compromiso final.</p>
+        <p class="section-kicker">Indicativo</p>
+      </article></div>
+      </section>
+      <section class="block" id="condiciones">
+        <div class="section-header">
+          <p class="section-kicker">Condiciones</p>
+          <h2>Supuestos, dependencias y siguiente paso</h2>
+          <p>Lo que debe quedar alineado antes de pasar a ejecución.</p>
+        </div>
+        <div class="reference-grid">
+          <article class="glass-card reference-card">
+        <p class="section-kicker">Condición</p>
+        <h3>Alcance</h3>
+        <p>workshop</p>
+        <p class="section-kicker">Condición</p>
+      </article>
+<article class="glass-card reference-card">
+        <p class="section-kicker">Condición</p>
+        <h3>Dependencias</h3>
+        <p>--- ## FASE 1: DISEÑO CURRICULAR (T-21 a T-7) ### Objetivo Personalizar curriculum para contexto específico, definir proyecto capstone, entrenar facilitadores, setup technical infrastructure. ### Duración **14 días** | E · --- ## KPIs Globales de Bootcamp | KPI | Métrica | Target | Cadencia | Responsable | |-----|---------|--------|----------|------------| | **Cohort Completion** | # participants who complete 3 weeks | ≥ 95% | Post-bootcam</p>
+        <p class="section-kicker">Gobierno</p>
+      </article>
+<article class="glass-card reference-card">
+        <p class="section-kicker">Condición</p>
+        <h3>Siguiente paso</h3>
+        <p>Objetivo: para el cliente santafeenergy de medellin colombia:https://santafeenergy.com.co/ en el cual se ejecutará ofimática con IA enfocado en la plataforma de workspace de google donde se enseñará a gemini, se enseñará a hacer propuestas...</p>
+        <p class="section-kicker">Acción</p>
+      </article>
+        </div>
+        <div class="two-col">
+          <article class="glass-card content-card">
+            <p class="section-kicker">Riesgos y controles</p>
+            <h3>Puntos que conviene gestionar desde el inicio</h3>
+            <ul><li>Alinear la propuesta con Delivery Servicios y su owner operativo antes de compartirla.</li><li>Verificar que el alcance de workshop quede cerrado antes de enviar la versión final.</li></ul>
+          </article>
+          <article class="glass-card content-card">
+            <p class="section-kicker">Gates</p>
+            <h3>Controles de ejecución</h3>
+            <div class="chip-list"><span class="chip">Controles por precisar</span></div>
+          </article>
+        </div>
+      </section>
+      <section class="block" id="faq">
+        <div class="section-header">
+          <p class="section-kicker">FAQ</p>
+          <h2>Preguntas que normalmente aparecen antes de cerrar</h2>
+          <p>Resolvemos lo esencial para acelerar decisión.</p>
+        </div>
+        <div class="reference-grid"><article class="glass-card reference-card">
+        <p class="section-kicker">FAQ</p>
+        <h3>¿Qué incluye Ofimática con IA en Google Workspace?</h3>
+        <p>Fase 1: Onboarding del Aliado (6-8 semanas) · Fase 2: Piloto Cohort (Semana 0-8) · Fase 3: Lanzamiento Público (Semana 9+)</p>
+        <p class="section-kicker">FAQ</p>
+      </article>
+<article class="glass-card reference-card">
+        <p class="section-kicker">FAQ</p>
+        <h3>¿Cuánto dura?</h3>
+        <p>20 horas</p>
+        <p class="section-kicker">FAQ</p>
+      </article>
+<article class="glass-card reference-card">
+        <p class="section-kicker">FAQ</p>
+        <h3>¿Qué necesito preparar?</h3>
+        <p>Objetivo, alcance y responsable de decisión para no frenar el arranque.</p>
+        <p class="section-kicker">FAQ</p>
+      </article>
+<article class="glass-card reference-card">
+        <p class="section-kicker">FAQ</p>
+        <h3>¿Cómo sigue el cierre?</h3>
+        <p>Objetivo: para el cliente santafeenergy de medellin colombia:https://santafeenergy.com.co/ en el cual se ejecutará ofimática con IA enfocado en la plataforma de workspace de google donde se enseñará a gemini, se enseñará a hacer propuestas...</p>
+        <p class="section-kicker">FAQ</p>
+      </article></div>
+      </section>
+      <section class="block" id="glosario">
+        <div class="section-header">
+          <p class="section-kicker">Glosario</p>
+          <h2>Lenguaje compartido para evitar ambigüedad</h2>
+          <p>Un dossier claro también define sus términos.</p>
+        </div>
+        <div class="reference-grid"><article class="glass-card reference-card">
+        <p class="section-kicker">Glosario</p>
+        <h3>Ruta</h3>
+        <p>Secuencia de pasos para pasar del diagnóstico al cierre.</p>
+        <p class="section-kicker">Glosario</p>
+      </article>
+<article class="glass-card reference-card">
+        <p class="section-kicker">Glosario</p>
+        <h3>Entregables</h3>
+        <p>Piezas que el cliente recibe al terminar la fase acordada.</p>
+        <p class="section-kicker">Glosario</p>
+      </article>
+<article class="glass-card reference-card">
+        <p class="section-kicker">Glosario</p>
+        <h3>SOPs</h3>
+        <p>Procedimientos que sostienen consistencia y repetibilidad.</p>
+        <p class="section-kicker">Glosario</p>
+      </article>
+<article class="glass-card reference-card">
+        <p class="section-kicker">Glosario</p>
+        <h3>Gates</h3>
+        <p>Controles para no avanzar sin evidencia mínima.</p>
+        <p class="section-kicker">Glosario</p>
+      </article>
+<article class="glass-card reference-card">
+        <p class="section-kicker">Glosario</p>
+        <h3>ROI</h3>
+        <p>Retorno esperado o valor de negocio frente a la inversión.</p>
+        <p class="section-kicker">Glosario</p>
+      </article></div>
+      </section>
+      <section class="block" id="trazabilidad">
+        <div class="section-header">
+          <p class="section-kicker">Trazabilidad</p>
+          <h2>Estructura etapificada devuelta por el bot</h2>
+          <p>Se conserva la salida por etapas para que la propuesta siga siendo auditable y editable por secciones.</p>
+        </div>
+        <div class="stage-grid"><article class="glass-card stage-card">
+        <p class="section-kicker">Etapa</p>
+        <h3>Repaso de lo Entendido</h3>
+        <p>Objetivo: para el cliente santafeenergy de medellin colombia:https://santafeenergy.com.co/ en el cual se ejecutará ofimática con IA enfocado en la plataforma de workspace de google donde se enseñará a gemini, se enseñará a hacer propuestas comerciales, se enseñará a hacer presentaciones, que tenemos para que esta propuesta comercial. El grupo será de 25 a 30 personas. Será ejecutado en 20 horas que se propone empezar en la semana del 13 de abril y serán clases tal cual como lo muestra la metodología de workshops, clínicas y masterclass. documentación y la informacion sobre este servicio en la pagina de metodologIA:https://metodologia.info/servicios/index antes de llenar la plantilla de...</p>
+      </article>
+<article class="glass-card stage-card">
+        <p class="section-kicker">Etapa</p>
+        <h3>Plan de Accion</h3>
+        <p>Bloque interno de plantilla resumido para mantener la trazabilidad.</p>
+      </article>
+<article class="glass-card stage-card">
+        <p class="section-kicker">Etapa</p>
+        <h3>Borrador Inicial</h3>
+        <p>Objetivo: para el cliente santafeenergy de medellin colombia:https://santafeenergy.com.co/ en el cual se ejecutará ofimática con IA enfocado en la plataforma de workspace de google donde se enseñará a gemini, se enseñará a hacer propuestas comerciales, se enseñará a hacer presentaciones, que tenemos para que esta propuesta comercial. El grupo será de 25 a 30 personas. Será ejecutado en 20 horas que se propone empezar en la semana del 13 de abril y serán clases tal cual como lo muestra la metodología de workshops, clínicas y masterclass. documentación y la informacion sobre este servicio en la pagina de metodologIA:https://metodologia.info/servicios/index antes de llenar la plantilla de...</p>
+      </article>
+<article class="glass-card stage-card">
+        <p class="section-kicker">Etapa</p>
+        <h3>Siguiente Paso</h3>
+        <p>Confirma owner, input faltante y criterio de cierre para pasar del scaffold a la ejecución.</p>
+      </article></div>
+      </section>
+      <section class="block" id="cierre">
+        <article class="glass-card cta-band">
+          <div>
+            <p class="section-kicker">Cierre comercial</p>
+            <h2 style="margin:0 0 12px;">La plantilla queda lista para rellenarse automáticamente en cada nueva propuesta.</h2>
+            <p>Objetivo: para el cliente santafeenergy de medellin colombia:https://santafeenergy.com.co/ en el cual se ejecutará ofimática con IA enfocado en la plataforma de workspace de google donde se enseñará a gemini, se enseñará a hacer propuestas...</p>
+          </div>
+          <div class="cta-chip">HTML preparado para compartir</div>
+        </article>
+      </section>
+      <footer>
+        Generado por Nexus para MetodologIA. HTML autocontenido, portable y basado en una plantilla reusable inspirada en el dossier comercial de referencia.
+      </footer>
+    </main>
+  </body>
+</html>
