@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Propuesta Comercial | Mansuera de ecuador</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f7f1e6;
+        --ink: #112038;
+        --muted: #5d6983;
+        --panel: rgba(255, 255, 255, 0.84);
+        --panel-solid: #fffdf9;
+        --line: rgba(17, 32, 56, 0.12);
+        --accent: #b17f2d;
+        --accent-strong: #805819;
+        --shadow: 0 24px 80px rgba(17, 32, 56, 0.12);
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: Georgia, 'Times New Roman', serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at top left, rgba(177, 127, 45, 0.2), transparent 24%),
+          radial-gradient(circle at bottom right, rgba(17, 32, 56, 0.12), transparent 30%),
+          linear-gradient(180deg, #fdfbf6 0%, var(--bg) 100%);
+      }
+      .shell {
+        width: min(1100px, calc(100% - 32px));
+        margin: 40px auto 64px;
+        padding: 0;
+      }
+      .hero {
+        position: relative;
+        overflow: hidden;
+        padding: 44px 36px 38px;
+        border: 1px solid var(--line);
+        border-radius: 30px;
+        background: linear-gradient(145deg, rgba(255,255,255,0.94), rgba(255,248,235,0.9));
+        box-shadow: var(--shadow);
+      }
+      .hero::after {
+        content: '';
+        position: absolute;
+        inset: auto -40px -70px auto;
+        width: 240px;
+        height: 240px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(177,127,45,0.26), transparent 72%);
+      }
+      .eyebrow {
+        margin: 0 0 16px;
+        font: 600 0.78rem/1.1 'Helvetica Neue', Arial, sans-serif;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--accent-strong);
+      }
+      h1 {
+        margin: 0 0 14px;
+        max-width: 760px;
+        font-size: clamp(2.5rem, 5vw, 4.8rem);
+        line-height: 0.92;
+      }
+      .lede {
+        max-width: 760px;
+        margin: 0;
+        color: var(--muted);
+        font-size: 1.08rem;
+        line-height: 1.72;
+      }
+      .meta {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 14px;
+        margin-top: 28px;
+      }
+      .meta-card {
+        padding: 16px 18px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: rgba(255,255,255,0.65);
+      }
+      .meta-label {
+        display: block;
+        margin-bottom: 6px;
+        font: 600 0.72rem/1.1 'Helvetica Neue', Arial, sans-serif;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--accent-strong);
+      }
+      .meta-value {
+        margin: 0;
+        color: var(--ink);
+        font-size: 1rem;
+      }
+      .sections {
+        display: grid;
+        gap: 18px;
+        margin-top: 24px;
+      }
+      .section-card {
+        padding: 28px 26px;
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        background: var(--panel-solid);
+        box-shadow: 0 14px 36px rgba(17, 32, 56, 0.06);
+      }
+      .section-eyebrow {
+        margin: 0 0 10px;
+        font: 600 0.72rem/1.1 'Helvetica Neue', Arial, sans-serif;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--accent-strong);
+      }
+      h2 {
+        margin: 0 0 14px;
+        font-size: clamp(1.4rem, 2.6vw, 2rem);
+        line-height: 1.05;
+      }
+      .section-body p {
+        margin: 0 0 14px;
+        color: var(--muted);
+        font-size: 1.02rem;
+        line-height: 1.72;
+      }
+      .section-body ul {
+        margin: 0;
+        padding-left: 20px;
+        color: var(--muted);
+      }
+      .section-body li {
+        margin-bottom: 10px;
+        line-height: 1.6;
+      }
+      .footer {
+        margin-top: 18px;
+        padding: 22px 28px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 0.94rem;
+        line-height: 1.6;
+      }
+      @media (max-width: 720px) {
+        .shell { width: min(100%, calc(100% - 20px)); margin: 18px auto 28px; }
+        .hero { padding: 28px 20px 24px; border-radius: 24px; }
+        .section-card { padding: 22px 18px; border-radius: 20px; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <p class="eyebrow">MetodologIA | Propuesta Comercial</p>
+        <h1>Mansuera de ecuador</h1>
+        <p class="lede">Documento HTML autocontenido generado desde Nexus para facilitar revisión, descarga y circulación de una propuesta comercial en un formato portable y presentable.</p>
+        <div class="meta">
+          <article class="meta-card">
+            <span class="meta-label">Cliente</span>
+            <p class="meta-value">Mansuera de ecuador</p>
+          </article>
+          <article class="meta-card">
+            <span class="meta-label">Fecha de solicitud</span>
+            <p class="meta-value">2026-04-01</p>
+          </article>
+        </div>
+      </section>
+      <section class="sections"><section class="section-card">
+        <p class="section-eyebrow">Bloque</p>
+        <h2>Contenido de la propuesta</h2>
+        <div class="section-body">
+          <p>**ETAPA 1 | REPASO DE LO ENTENDIDO**<br />- Necesitas una propuesta comercial del Programa de Empoderamiento, dirigida a **Mansuera (Ecuador)**.<br />- La propuesta debe presentar: resumen, problema, solución propuesta, cronograma e inversión.<br />- Debe usar la moneda local de Ecuador (USD) y seguir el formato de cuatro bloques solicitado.</p>
+<p>**ETAPA 2 | PLAN DE ACCIÓN**<br />1. Adaptar el programa a contexto ecuatoriano.<br />2. Definir entregables y tiempos.<br />3. Cotizar en USD con desglose.<br />4. Redactar la propuesta siguiendo la plantilla solicitada.</p>
+<p>**ETAPA 3 | SCAFFOLD INICIAL**</p>
+<p>**Resumen (≤600c)**<br />Proponemos a Mansuera un Programa de Empoderamiento de 9 semanas (≈ 60 h) que fortalece liderazgo, toma de decisiones y cultura de autonomía. Incluye diagnóstico, talleres interactivos, proyecto aplicado y certificación, todo con mentores bilingües y soporte local.</p>
+<p>**Problema (≤900c)**<br />- Equipos con alta rotación y decisiones centralizadas.<br />- Falta de habilidades de liderazgo y autogestión que impactan la productividad y la innovación.<br />- Necesidad de alineación estratégica entre áreas para responder rápidamente al mercado ecuatoriano.</p>
+<p>**Solución Propuesta (≤1400c)**<br />- **Módulo 1 – Diagnóstico**: encuesta de clima y entrevista con líderes.<br />- **Módulo 2 – Liderazgo y Autonomía**: talleres presenciales en Quito + material digital.<br />- **Módulo 3 – Toma de decisiones**: simulaciones con casos locales (p.ej., agroexportación).<br />- **Módulo 4 – Comunicación e Influencia**: role‑play y coaching grupal.<br />- **Módulo 5 – Proyecto Aplicado**: cada participante desarrolla un plan de mejora en su área, con mentoría semanal.<br />- **Módulo 6 – Cierre y Certificación**: evaluación final, retroalimentación y certificado internacional MetodologIA.<br />- **Soporte**: plataforma LMS, comunidad de práctica y acceso a recursos Minto.</p>
+<p>**Cronograma (≤700c)**<br />| Semana | Actividad | Entregable |<br />|--------|-----------|------------|<br />| 1 | Diagnóstico &amp; Goal‑Setting | Informe de brechas |<br />| 2‑3 | Liderazgo &amp; Autonomía | Slides + ejercicios |<br />| 4‑5 | Toma de decisiones | Guía + checklist |<br />| 6 | Comunicación &amp; Influencia | Grabaciones + feedback |<br />| 7‑9 | Proyecto aplicado + mentorización | Proyecto entregable + presentación |<br />| 9 (día X) | Cierre &amp; Certificación | Certificado MetodologIA |</p>
+<p>**Inversión (≤500c)**<br />| Concepto | USD |<br />|----------|-----|<br />| Programa completo (9 semanas) | **4,800 USD** |<br />| Materiales digitales y acceso LMS | 300 USD |<br />| Mentoría personalizada (10 h) | 400 USD |<br />| **Total** | **5,500 USD** |<br />*Incluye IVA ecuatoriano (12 %).*</p>
+<p>**ETAPA 4 | SIGUIENTE PASO**<br />Confirma si la propuesta y la inversión (USD 5,500) son aceptables para Mansuera o indica ajustes (plazos, alcance, presupuesto) para generar la versión final con contrato.</p>
+        </div>
+      </section></section>
+      <footer class="footer">Generado automaticamente por Nexus para MetodologIA. Este archivo es autocontenido y no depende de hojas de estilo externas ni scripts remotos.</footer>
+    </main>
+  </body>
+</html>
