@@ -202,14 +202,21 @@
        SCROLL REVEAL ANIMATION
        ============================================================ */
     .reveal {
-      opacity: 0;
-      transform: translateY(40px);
+      opacity: 1;
+      transform: none;
       transition: opacity 0.8s ease, transform 0.8s ease;
     }
 
     .reveal.visible {
       opacity: 1;
       transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal,
+      .reveal.visible {
+        transition: none;
+      }
     }
 
     /* ============================================================
@@ -2872,6 +2879,12 @@
   let selectedAssistants = new Set();
   let activeTemplatePayload = null;
 
+  function renderIcons() {
+    if (typeof lucide !== 'undefined' && typeof lucide.createIcons === 'function') {
+      lucide.createIcons();
+    }
+  }
+
   /* ==================================================================
      INITIALIZATION
      ================================================================== */
@@ -2886,7 +2899,7 @@
     initScrollReveal();
     initScrollProgress();
     addAccessibility();
-    lucide.createIcons();
+    renderIcons();
   });
 
   function isPlainObject(value) {
@@ -3072,6 +3085,7 @@
      SCROLL REVEAL (IntersectionObserver)
      ================================================================== */
   function initScrollReveal() {
+    if (typeof IntersectionObserver === 'undefined') return;
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -3177,7 +3191,7 @@
         grid.appendChild(card);
       });
     });
-    lucide.createIcons();
+    renderIcons();
   }
 
   /* ==================================================================
@@ -3218,7 +3232,7 @@
         </div>
       </div>
     `;
-    lucide.createIcons();
+    renderIcons();
     document.getElementById('modal-module').classList.add('active');
     /* Module modal opened */
     document.body.style.overflow = 'hidden';
@@ -3244,7 +3258,7 @@
         dot.style.color = i <= n ? '#0B2545' : 'var(--text-muted)';
       }
     });
-    lucide.createIcons();
+    renderIcons();
   }
 
   function closeModal(name) {
@@ -3458,7 +3472,7 @@
     updateEmpPrice();
     renderAssistantChips();
     updateConfig();
-    lucide.createIcons();
+    renderIcons();
   }
 
   /* ==================================================================
@@ -3482,7 +3496,7 @@
     }
 
     updateConfig();
-    lucide.createIcons();
+    renderIcons();
   }
 
   /* ==================================================================
@@ -3584,7 +3598,7 @@
     }
 
     /* Re-render icons in dynamic content */
-    if (typeof lucide !== 'undefined') lucide.createIcons();
+    if (typeof lucide !== 'undefined') renderIcons();
 
     updateEmpPrice();
     applyTemplateSelectorBindings();
@@ -3616,7 +3630,7 @@
       content.style.maxHeight = content.scrollHeight + 'px';
       if (icon) icon.style.transform = 'rotate(180deg)';
     }
-    lucide.createIcons();
+    renderIcons();
   }
   </script>
 
