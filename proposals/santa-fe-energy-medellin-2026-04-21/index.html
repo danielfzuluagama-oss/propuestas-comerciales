@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Propuesta Comercial - Santa Fe Energy Medellin</title>
+  <style>
+:root {
+  --bg: #f4efe6;
+  --panel: rgba(255, 251, 245, 0.94);
+  --ink: #152238;
+  --muted: #5f6e81;
+  --accent: #b35c2e;
+  --accent-soft: #f1d9c8;
+  --border: rgba(21, 34, 56, 0.12);
+  --shadow: 0 18px 48px rgba(21, 34, 56, 0.09);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(179, 92, 46, 0.18), transparent 28%),
+    linear-gradient(180deg, #fcf8f3 0%, var(--bg) 100%);
+  font-family: Georgia, 'Times New Roman', serif;
+}
+.proposal-shell {
+  width: min(1120px, calc(100vw - 32px));
+  margin: 0 auto;
+  padding: 36px 0 72px;
+}
+.hero-band {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+  gap: 24px;
+  margin-bottom: 18px;
+}
+.hero-copy, .hero-card, .panel, .metric-card, .service-card {
+  border: 1px solid var(--border);
+  border-radius: 26px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+.hero-copy { padding: 40px; }
+.hero-card { padding: 30px; background: linear-gradient(160deg, #fffaf4, #f1e0d0); }
+.proposal-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.proposal-nav a {
+  text-decoration: none;
+  color: var(--ink);
+  background: rgba(255,255,255,0.78);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-size: 14px;
+}
+.metrics-grid, .grid, .service-grid { display: grid; gap: 20px; margin-bottom: 20px; }
+.metrics-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid.two-up { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.service-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.metric-card, .service-card, .panel { padding: 26px; }
+.eyebrow, .section-label, .card-label, .footnote {
+  margin: 0 0 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+}
+h1 { margin: 0; font-size: clamp(2.35rem, 5vw, 4.35rem); line-height: 0.98; }
+h2 { margin: 0 0 10px; font-size: 1.25rem; line-height: 1.2; }
+.subtitle { margin: 12px 0 18px; font-size: 1.2rem; color: var(--muted); }
+.lede, .panel p, .service-card p, .card-note, .card-value, .origin, dd, li { line-height: 1.7; }
+.metric-value { margin: 0; font-size: 2rem; font-weight: 700; }
+.metric-label { margin: 8px 0 0; color: var(--muted); }
+.card-value { margin: 0 0 10px; font-weight: 700; }
+.card-note, .muted, .origin, dd { color: var(--muted); }
+.proposal-list { margin: 0; padding-left: 20px; }
+.proposal-list.compact li { margin-bottom: 10px; }
+.proposal-list li { margin-bottom: 12px; }
+.definition-list { margin: 18px 0 0; display: grid; grid-template-columns: 1fr; gap: 8px; }
+.definition-list dt { font-weight: 700; }
+.definition-list dd { margin: 0; }
+.panel.accent { background: linear-gradient(180deg, #fff7ef 0%, #f4e7d8 100%); }
+.footer-panel { margin-bottom: 0; }
+@media (max-width: 980px) {
+  .service-grid, .metrics-grid, .grid.two-up, .hero-band { grid-template-columns: 1fr; }
+}
+@media (max-width: 720px) {
+  .proposal-shell { width: min(100vw - 20px, 1120px); padding: 20px 0 40px; }
+  .hero-copy, .hero-card, .panel, .metric-card, .service-card { padding: 22px; border-radius: 22px; }
+  .proposal-nav a { width: 100%; text-align: center; }
+}
+@media print {
+  body { background: #fff; }
+  .proposal-shell { width: 100%; padding: 0; }
+  .hero-copy, .hero-card, .panel, .metric-card, .service-card { box-shadow: none; }
+  .proposal-nav { display: none; }
+}
+  </style>
+</head>
+<body>
+  <main class="proposal-shell">
+    <section class="hero-band">
+      <div class="hero-copy">
+        <p class="eyebrow">Propuesta Comercial · 21 de abril de 2026</p>
+        <h1>Propuesta Comercial - Santa Fe Energy Medellin</h1>
+        <p class="subtitle">Cliente: Santa Fe Energy Medellin</p>
+        <p class="lede">Esta propuesta traduce la investigacion disponible sobre Santa Fe Energy Medellin en una oferta comercial concreta para ofimatica con ia, con foco en priorizar servicios de IA aplicables para Santa Fe Energy Medellin y convertir la investigacion disponible en una oferta comercial accionable.</p>
+      </div>
+      <aside class="hero-card">
+        <p class="card-label">Snapshot operativo</p>
+        <p class="card-value">Servicio eje: Ofimatica con IA</p>
+        <p class="card-value">Modo solicitado: FULL</p>
+        <p class="card-value">Modo aplicado: FULL</p>
+        <p class="card-note">piloto inicial de 2 a 4 semanas y escalamiento por etapas</p>
+      </aside>
+    </section>
+    <nav class="proposal-nav" aria-label="Secciones de la propuesta">
+      <a href="#resumen">Resumen</a>
+      <a href="#reto">Reto</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#alcance">Alcance</a>
+      <a href="#plan">Plan</a>
+      <a href="#hallazgos">Hallazgos</a>
+      <a href="#siguiente-paso">Siguiente paso</a>
+    </nav>
+    <section class="metrics-grid">
+      <article class="metric-card">
+        <p class="metric-value">3</p>
+        <p class="metric-label">Servicios priorizados</p>
+      </article>
+      <article class="metric-card">
+        <p class="metric-value">1</p>
+        <p class="metric-label">Hallazgos incorporados</p>
+      </article>
+      <article class="metric-card">
+        <p class="metric-value">FULL</p>
+        <p class="metric-label">Modo aplicado</p>
+      </article>
+    </section>
+    <section id="resumen" class="panel">
+      <p class="section-label">Resumen Ejecutivo</p>
+      <p>Esta propuesta traduce la investigacion disponible sobre Santa Fe Energy Medellin en una oferta comercial concreta para ofimatica con ia, con foco en priorizar servicios de IA aplicables para Santa Fe Energy Medellin y convertir la investigacion disponible en una oferta comercial accionable.</p>
+      <p class="muted">Objetivo comercial: priorizar servicios de IA aplicables para Santa Fe Energy Medellin y convertir la investigacion disponible en una oferta comercial accionable</p>
+    </section>
+    <section id="reto" class="grid two-up">
+      <article class="panel accent">
+        <p class="section-label">Reto Detectado</p>
+        <p>El reto actual es pasar de interes general en IA a una ruta comercial priorizada, defendible y con entregables visibles para Santa Fe Energy Medellin.</p>
+      </article>
+      <article class="panel">
+        <p class="section-label">Enfoque Propuesto</p>
+        <p>Se recomienda una activacion por etapas que combine quick wins de productividad, estandarizacion comercial y un piloto inicial que demuestre valor medible en un plazo acotado.</p>
+      </article>
+    </section>
+    <section id="servicios" class="panel">
+      <p class="section-label">Servicios Recomendados</p>
+      <div class="service-grid">
+        <article class="service-card">
+          <h2>Ofimatica con IA</h2>
+          <p>Modernizar flujos de trabajo con asistentes, automatizaciones y plantillas guiadas para acelerar tareas recurrentes en Santa Fe Energy Medellin.</p>
+          <ul class="proposal-list">
+            <li>Reduccion de tiempo en tareas administrativas y documentales</li>
+            <li>Mejor calidad y consistencia en entregables internos</li>
+            <li>Mayor adopcion de IA en equipos no tecnicos</li>
+          </ul>
+        </article>
+        <article class="service-card">
+          <h2>Propuestas comerciales con IA</h2>
+          <p>Estandarizar la generacion de propuestas, cotizaciones y respuestas comerciales con IA para ganar velocidad y consistencia.</p>
+          <ul class="proposal-list">
+            <li>Menor tiempo de salida para propuestas y cotizaciones</li>
+            <li>Mensajes comerciales mas consistentes y reutilizables</li>
+            <li>Mayor capacidad del equipo para responder oportunidades</li>
+          </ul>
+        </article>
+        <article class="service-card">
+          <h2>Automatizacion operativa con IA</h2>
+          <p>Orquestar procesos operativos repetitivos con IA y reglas claras para reducir friccion y tiempos de respuesta.</p>
+          <ul class="proposal-list">
+            <li>Menos tareas manuales repetitivas</li>
+            <li>Trazabilidad mas clara del flujo operativo</li>
+            <li>Mas capacidad disponible para trabajo de mayor valor</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+    <section id="alcance" class="grid two-up">
+      <article class="panel">
+        <p class="section-label">Alcance</p>
+        <p>discovery comercial breve, analisis inicial del cliente, sintesis de hallazgos clave, priorizacion de servicios de IA, propuesta comercial HTML lista para compartir</p>
+        <dl class="definition-list">
+          <dt>Geografia</dt>
+          <dd>Medellin</dd>
+          <dt>Horizonte</dt>
+          <dd>piloto inicial de 2 a 4 semanas y escalamiento por etapas</dd>
+          <dt>Criterio de exito</dt>
+          <dd>investigacion sintetizada, oferta priorizada y propuesta HTML lista para revision y publicacion</dd>
+        </dl>
+      </article>
+      <article class="panel">
+        <p class="section-label">Entregables</p>
+        <ul class="proposal-list">
+          <li>Propuesta comercial en HTML lista para compartir</li>
+          <li>Mapa de servicios priorizados por impacto y rapidez de adopcion</li>
+          <li>Plan de activacion por etapas con responsables sugeridos</li>
+          <li>Siguiente paso comercial recomendado para iniciar piloto</li>
+        </ul>
+      </article>
+    </section>
+    <section id="plan" class="grid two-up">
+      <article class="panel">
+        <p class="section-label">Plan de Trabajo</p>
+        <ul class="proposal-list">
+          <li>Fase 1. Discovery ejecutivo para aterrizar objetivo, contexto y restricciones de Santa Fe Energy Medellin.</li>
+          <li>Fase 2. Priorizacion de casos de uso de IA con foco en productividad y conversion comercial.</li>
+          <li>Fase 3. Diseno del piloto inicial, alcance, dependencias y medicion de valor.</li>
+          <li>Fase 4. Activacion del entregable comercial y decision de siguiente bloque de implementacion.</li>
+        </ul>
+      </article>
+      <article class="panel">
+        <p class="section-label">Supuestos de Trabajo</p>
+        <ul class="proposal-list">
+          <li>La propuesta se construye con base en el brief actual y debe validarse con stakeholders del cliente.</li>
+          <li>Los precios y el modelo comercial definitivo se ajustan en la etapa de cierre o discovery.</li>
+          <li>El horizonte de ejecucion de referencia es piloto inicial de 2 a 4 semanas y escalamiento por etapas.</li>
+        </ul>
+      </article>
+    </section>
+    <section id="hallazgos" class="panel">
+      <p class="section-label">Hallazgos y Contexto Utilizado</p>
+      <ul class="proposal-list compact">
+        <li><strong>Contexto del usuario:</strong> objetivo validar servicios de IA para ofimatica inteligente y propuestas comerciales con IA, alcance propuesta html descargable</li>
+      </ul>
+    </section>
+    <section id="siguiente-paso" class="panel footer-panel">
+      <p class="section-label">Siguiente Paso Recomendado</p>
+      <p>validar prioridad de servicios, definir piloto inicial y aprobar la activacion comercial</p>
+      <p class="footnote">Solicitud de origen</p>
+      <p class="origin">quiero que crees luego una propuesta comercial html y me la envies</p>
+    </section>
+  </main>
+</body>
+</html>
